@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Web3Service } from './blockchain/web3.service';
 
 import { worker } from 'cluster';
+import { resourceUsage } from 'process';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +11,13 @@ import { worker } from 'cluster';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  campaigns = this.ws.getCampaignsArray();
+  campaigns!: string[];
 
   constructor(private ws: Web3Service) {}
 
   ngOnInit() {
-    console.log(this.campaigns);
+    this.ws.getCampaignsArray().then((result) => {
+      this.campaigns = result;
+    });
   }
 }
