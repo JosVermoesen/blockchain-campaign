@@ -1,0 +1,15 @@
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppComponent } from './app.component';
+import { Web3Service } from './blockchain/web3.service';
+
+@NgModule({
+  declarations: [AppComponent],
+
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule],
+  providers: [Web3Service],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
