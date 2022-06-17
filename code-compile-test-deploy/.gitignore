@@ -2,7 +2,7 @@
 
 # Node
 /node_modules
-bc-campaign/build/
+build
 secrets.js
 npm-debug.log
 yarn-error.log
